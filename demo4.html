@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>fabric不规则图形</title>
+    <script src="js/fabric.js"></script>
+    <style>
+        body{
+            background-color: #ccc;
+        }
+        #main{
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+<canvas width="800" height="800" id="main"></canvas>
+</body>
+</html>
+<script type="text/javascript">
+    var canvas =new fabric.Canvas('main');
+    var path = new fabric.Path('M 0 0 L 200 100 L 170 200 z'); //路径 第一个参数M移动 二三参数坐标是第一个点 L是线  后面跟第二个点的坐标 z是将三个点闭合
+    path.set({
+        left:120,
+        top:120,
+        fill:"red"
+    });
+    canvas.add(path);
+</script>

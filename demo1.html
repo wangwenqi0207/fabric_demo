@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>fabric</title>
+    <script src="js/fabric.js"></script>
+</head>
+<body>
+    <canvas id="cc" width="800" height="800"></canvas>
+</body>
+</html>
+<script type="text/javascript">
+    var canvas = new fabric.Canvas('cc'); //你要作用的id
+    //正方形
+    var rect = new fabric.Rect({  //构建一个正方形fabric.Rect
+        left:100,  //据上边的距离
+        top:100,   //据顶部的距离
+        fill:'red', //填充一个颜色
+        width: 30, //宽
+        height:30, //高
+    });
+    canvas.add(rect); //将正方形填充到画布上去
+</script>

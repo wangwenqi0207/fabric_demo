@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>fabric图像过滤器</title>
+    <script src="js/fabric.js"></script>
+    <style>
+        body{
+            background-color: #ccc;
+        }
+        #main{
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+<canvas width="800" height="800" id="canvas"></canvas>
+</body>
+</html>
+<script type="text/javascript">
+    var canvas =new fabric.Canvas('canvas');
+     fabric.Image.fromURL('./img/1.jpg',function (img) {
+        img.filters.push(new fabric.Image.filters.Grayscale()); //把图片变成黑白色
+        img.applyFilters(canvas.renderAll.bind(canvas));
+        canvas.add(img);
+    });
+
+</script>

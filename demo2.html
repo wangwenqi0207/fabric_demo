@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>fabric简单图形</title>
+    <script src="js/fabric.js"></script>
+    <style>
+        body{
+            background-color: #ccc;
+        }
+        #main{
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <canvas width="800" height="800" id="main"></canvas>
+</body>
+</html>
+<script type="text/javascript">
+    var canvas = new fabric.Canvas('main'); //你要作用的id
+    //正方形
+    var rect = new fabric.Rect({  //构建一个方形fabric.Rect
+        left:100,  //据上边的距离
+        top:100,   //据顶部的距离
+        fill:'red', //填充一个颜色
+        width: 50, //宽
+        height:50, //高
+    });
+
+    //圆形
+    var circle = new fabric.Circle({
+        radius:50, //半径
+        fill:'green',
+        left:200,
+        top: 200,
+    })
+
+    //三角形
+    var triangle = new fabric.Triangle({
+        width: 80,
+        height: 100,
+        fill:'black',
+        left:300,
+        top:300,
+    })
+    canvas.add(rect); //将正方形填充到画布上去
+    canvas.add(circle);
+    canvas.add(triangle);
+</script>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>fabric插入图片和图片属性</title>
+    <script src="js/fabric.js"></script>
+    <style>
+        body{
+            background-color: #ccc;
+        }
+        #main{
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <canvas width="800" height="800" id="main"></canvas>
+    <!--<img src="./img/1.jpg"  id="can_img" alt="" style="display: none">-->
+</body>
+</html>
+<script type="text/javascript">
+    var canvas = new fabric.Canvas('main'); //你要作用的id
+    var imgElement = document.getElementById('can_img');
+    //第一种 前面写上img标签
+    // var imgInstance = new fabric.Image(imgElement,{  //插入一张图片
+    //     left:100,
+    //     top:100,
+    //     width: 200,
+    //     height:200,
+    //     angle:30, //30度的旋转
+    // })
+    // canvas.add(imgInstance);
+
+    //第二种 不写标签的插入图片方式
+    fabric.Image.fromURL('./img/1.jpg',function (oImg) {
+        oImg.scale(0.5); //缩放0.5倍
+        canvas.add(oImg);
+    });
+</script>
